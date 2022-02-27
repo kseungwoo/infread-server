@@ -32,3 +32,12 @@
 - remove: 파일을 삭제하는 작업만 수행한 경우
 - rename: 파일 혹은 폴더명을 수정하거나 옮기는 작업만 한 경우
 - chore: 이외 기타 사항
+
+
+
+## 브랜치 전략
+
+> git-flow
+
+<img width="452" alt="image" src="https://user-images.githubusercontent.com/71204049/155872620-c4e2a60f-14c5-4476-b9fe-08eaf61fd86b.png">
+
