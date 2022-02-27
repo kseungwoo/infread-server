@@ -14,6 +14,12 @@
 
 
 
+## 프로젝트 구조
+
+> 초안
+
+<img width="600" alt="image" src="../../Library/Application Support/typora-user-images/155872538-0a4e60b5-f8d9-41ef-9fb8-80ed4db0b10c.png">
+
 ## 커밋 컨벤션
 - feat: 새로운 기능 추가
 - fix: 버그 수정
