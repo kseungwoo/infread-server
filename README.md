@@ -18,7 +18,7 @@
 
 > 초안
 
-<img width="600" alt="image" src="../../Library/Application Support/typora-user-images/155872538-0a4e60b5-f8d9-41ef-9fb8-80ed4db0b10c.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/71204049/155873794-a55f748e-d061-43a5-88f1-f43121fa26ff.png">
 
 ## 커밋 컨벤션
 - feat: 새로운 기능 추가
