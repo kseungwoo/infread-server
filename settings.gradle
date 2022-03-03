@@ -1,0 +1,4 @@
+rootProject.name = 'infread'
+include 'infread-core'
+include 'infread-api'
+
