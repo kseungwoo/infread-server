@@ -1,4 +1,4 @@
-rootProject.name = 'infread'
-include 'infread-core'
-include 'infread-api'
+rootProject.name = 'parsley'
+include 'parsley-core'
+include 'parsley-api'
 
