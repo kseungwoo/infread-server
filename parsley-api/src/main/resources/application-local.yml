@@ -1,0 +1,26 @@
+app:
+  jwt:
+    secret: skkuInfreadskku@!
+    accessTokenExpirationInMilliSecond: 1800000 # 30분
+    refreshTokenExpirationInMilliSecond: 1210000000 # 2주
+
+spring:
+  application:
+    name: parsley-api
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/infread?useSSL=false&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: parsley
+    password: curry
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+
+    hibernate:
+      ddl-auto: none
+
+server:
+  port: 10754
