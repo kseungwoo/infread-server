@@ -48,11 +48,11 @@ public class JoongAngCrawler {
                         ZonedDateTime.now().getMinute(),
                         0,
                         0,
-                        ZoneId.of("Asia/Seoul")).minusMinutes(100);
+                        ZoneId.of("Asia/Seoul")).minusMinutes(1);
 
         return getAllArticlesPerCategory(category)
                 .stream()
-                .filter(vo -> vo.getPublishedAt().isAfter(publishedAt))
+                .filter(vo -> vo.getPublishedAt().isEqual(publishedAt))
                 .collect(Collectors.toList());
     }
 
@@ -63,7 +63,9 @@ public class JoongAngCrawler {
         final int size =
                 document.select("#story_list > li > div.card_body > h2 > a").size();
 
-        return IntStream.rangeClosed(1, size).mapToObj(n -> getOneArticlePerCategory(n, document, category)).collect(Collectors.toList());
+        return IntStream.rangeClosed(1, size).mapToObj(n -> getOneArticlePerCategory(n, document, category))
+                .filter(articleVo -> articleVo.getDescription().length() < 1500)
+                .collect(Collectors.toList());
     }
 
     public ArticleVo getOneArticlePerCategory(final int n, final Document document, NewsCategory category) {
