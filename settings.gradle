@@ -1,4 +1,4 @@
 rootProject.name = 'parsley'
 include 'parsley-core'
 include 'parsley-api'
-
+include 'parsley-crawler'
