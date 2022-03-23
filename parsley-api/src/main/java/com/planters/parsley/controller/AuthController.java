@@ -1,6 +1,7 @@
 package com.planters.parsley.controller;
 
 import com.planters.parsley.component.CommonResponseMaker;
+import com.planters.parsley.component.CommonResponseMaker.CommonResponseEntity;
 import com.planters.parsley.constant.ResponseCode;
 import com.planters.parsley.dto.*;
 import com.planters.parsley.service.AuthService;
@@ -20,45 +21,45 @@ public class AuthController extends AppApiV1Controller {
      * Sign-Up
      */
     @PostMapping("/auth/sign-up")
-    public CommonResponse<Void> signUp(@RequestBody final SignUpRequestDto requestDto) {
+    public CommonResponseEntity signUp(@RequestBody final SignUpRequestDto requestDto) {
 
         authService.signUp(requestDto.toVo());
 
-        return commonResponseMaker.makeEmptyInfoCommonResponse(ResponseCode.SUCCESS);
+        return commonResponseMaker.makeCommonResponse(ResponseCode.SUCCESS);
     }
 
     /**
      * Sign-In
      */
     @PostMapping("/auth/sign-in")
-    public CommonResponse<SignInResponseDto> signIn(@RequestBody final SignInRequestDto requestDto) {
+    public CommonResponseEntity signIn(@RequestBody final SignInRequestDto requestDto) {
 
         final SignInResponseDto responseDto = SignInResponseDto.of(authService.signIn(requestDto.toVo()));
 
-        return commonResponseMaker.makeSucceedCommonResponse(responseDto);
+        return commonResponseMaker.makeCommonResponse(responseDto, ResponseCode.SUCCESS);
     }
 
     /**
      * Sign-Out
      */
     @PostMapping("/auth/sign-out")
-    public CommonResponse<Void> signOut(@AuthenticationPrincipal final UserPrincipal userPrincipal) {
+    public CommonResponseEntity signOut(@AuthenticationPrincipal final UserPrincipal userPrincipal) {
 
         authService.signOut(userPrincipal);
 
-        return commonResponseMaker.makeEmptyInfoCommonResponse(ResponseCode.SUCCESS);
+        return commonResponseMaker.makeCommonResponse(ResponseCode.SUCCESS);
     }
 
     /**
      * Reissue Jwt Tokens
      */
     @PostMapping("/auth/tokens")
-    public CommonResponse<ReissueJwtTokensResponseDto> reissueJwtTokens(
+    public CommonResponseEntity reissueJwtTokens(
             @RequestBody final ReissueJwtTokensRequestDto requestDto) {
 
         final ReissueJwtTokensResponseDto responseDto =
                 ReissueJwtTokensResponseDto.of(authService.reissueTokens(requestDto.toVo()));
 
-        return commonResponseMaker.makeSucceedCommonResponse(responseDto);
+        return commonResponseMaker.makeCommonResponse(responseDto, ResponseCode.SUCCESS);
     }
 }
