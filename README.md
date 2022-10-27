@@ -16,9 +16,11 @@
 
 ## 프로젝트 구조
 
-> 초안
-
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/71204049/155873794-a55f748e-d061-43a5-88f1-f43121fa26ff.png">
+
+## 앱 디자인
+
+![image](https://user-images.githubusercontent.com/71204049/198196956-5e36db87-54a8-4930-beb6-af8318046b36.png)
 
 ## 커밋 컨벤션
 - feat: 새로운 기능 추가
